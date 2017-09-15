@@ -1,4 +1,3 @@
-console.log("whats upp");
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.js';
