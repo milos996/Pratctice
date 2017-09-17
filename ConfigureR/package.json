@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.min.js",
   "scripts": {
-    "start":  "webpack-dev-server"
+    "start": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.18.2",
     "uglifyjs-webpack-plugin": "^0.4.6"
   }
 }
