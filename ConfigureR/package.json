@@ -2,7 +2,7 @@
   "name": "react_app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.min.js",
+  "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server"
   },

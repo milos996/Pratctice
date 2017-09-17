@@ -1,6 +1,7 @@
     const path = require('path');
+    require("./style.css");
+
   const HtmlWebpackPlugin = require('html-webpack-plugin');
-  const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
     const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: './client/index.html',
@@ -12,7 +13,7 @@
     entry: './client/index.js',
     output: {
       path: __dirname + "/dist",
-      filename: "index.min.js"
+      filename: "index.js"
     },
     module: {
       loaders: [
@@ -22,7 +23,6 @@
       ]
     },
     plugins: [
-      HtmlWebpackPluginConfig,
-     new UglifyJSPlugin()
+      HtmlWebpackPluginConfig
     ]
   }
