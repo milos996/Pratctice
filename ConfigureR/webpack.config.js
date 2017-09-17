@@ -3,6 +3,7 @@
 
   const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+    const ExtractTextPlugin = require("extract-text-webpack-plugin");
     const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: './client/index.html',
     filename: 'index.html',
@@ -17,12 +18,20 @@
     },
     module: {
       loaders: [
-        { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-        { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-        { test: /\.css$/, loader: "style-loader!css-loader" }
+          { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+          { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
+          { test: /\.css$/, loader: "style-loader!css-loader" },
+          {
+                    test: /\.css$/,
+                    loader: ExtractTextPlugin.extract({
+                      fallbackLoader: "style-loader",
+                      loader: "css-loader!sass-loader",
+          }),
+          }
       ]
     },
     plugins: [
-      HtmlWebpackPluginConfig
+      HtmlWebpackPluginConfig,
+       new ExtractTextPlugin("client/style.css"),
     ]
   }
