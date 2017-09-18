@@ -1,9 +1,7 @@
     const path = require('path');
-    require("./style.css");
-
   const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-    const ExtractTextPlugin = require("extract-text-webpack-plugin");
     const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: './client/index.html',
     filename: 'index.html',
@@ -14,24 +12,24 @@
     entry: './client/index.js',
     output: {
       path: __dirname + "/dist",
-      filename: "index.js"
+      filename: "bundle.js"
     },
     module: {
       loaders: [
           { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
           { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-          { test: /\.css$/, loader: "style-loader!css-loader" },
           {
-                    test: /\.css$/,
-                    loader: ExtractTextPlugin.extract({
-                      fallbackLoader: "style-loader",
-                      loader: "css-loader!sass-loader",
-          }),
+            test: /\.sass$/,
+            exclude: /node_modules/,
+            use: ExtractTextPlugin.extract({
+              fallback: "style-loader",
+              use: "css-loader!sass-loader",
+            }),
           }
-      ]
-    },
+        ]
+      },
     plugins: [
       HtmlWebpackPluginConfig,
-       new ExtractTextPlugin("client/style.css"),
+       new ExtractTextPlugin({ filename: 'style.css', disable: false, allChunks: true })
     ]
   }

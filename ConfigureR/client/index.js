@@ -1,6 +1,5 @@
-require("./style.css");
 
-
+require("./style.sass");
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.js';
