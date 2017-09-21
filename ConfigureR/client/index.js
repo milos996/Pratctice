@@ -1,14 +1,14 @@
 
-require("./style.sass");
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.js';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  hashHistory
 } from 'react-router-dom'
-
+require("./style.sass");
 
 ReactDOM.render(
   (<Router>

@@ -12,7 +12,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
     entry: './client/index.js',
     output: {
       path: __dirname + "/dist",
-      filename: "bundle.js"
+      filename: "index.js"
     },
     module: {
       loaders: [
@@ -30,6 +30,6 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
       },
     plugins: [
       HtmlWebpackPluginConfig,
-       new ExtractTextPlugin({ filename: 'style.css', disable: false, allChunks: true })
+     new ExtractTextPlugin({ filename: 'style.css', disable: false, allChunks: true })
     ]
   }

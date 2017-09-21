@@ -27208,7 +27208,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 /* 232 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: Error: \"extract-text-webpack-plugin\" loader is used without the corresponding plugin, refer to https://github.com/webpack/extract-text-webpack-plugin for the usage example\n    at Object.pitch (C:\\Users\\M\\Desktop\\Pratctice\\ConfigureR\\node_modules\\extract-text-webpack-plugin\\dist\\loader.js:53:11)");
 
 /***/ })
 /******/ ]);
